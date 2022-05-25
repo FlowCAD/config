@@ -1,0 +1,9 @@
+user.name=
+user.email=
+color.ui=true
+alias.co=checkout
+alias.br=branch
+alias.st=status
+merge.tool=kdiff3
+diff.guitool=kdiff3
+url.https://github.com/.insteadof=ssh://git@github.com/
