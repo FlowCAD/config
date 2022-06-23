@@ -1,0 +1,52 @@
+# /home/florian/.config/tmuxinator/meloger.yml
+
+name: meloger
+root: ~/Documents/_dev_perso/melogersurbordeaux
+
+
+# Project hooks
+# Runs on project start, always
+# on_project_start: command
+# Run on project start, the first time
+# on_project_first_start: command
+# Run on project start, after the first time
+# on_project_restart: command
+# Run on project exit ( detaching from tmux session )
+# on_project_exit: command
+# Run on project stop
+# on_project_stop: command
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+startup_window: meloger
+# startup_pane: 1
+
+windows:
+  - meloger:
+      layout: bfbd,211x54,0,0[211x33,0,0{105x33,0,0,0,105x33,106,0,2},211x20,0,34{105x20,0,34,3,105x20,106,34,4}]
+      panes:
+        - dev_front:
+          - cd frontend/
+          - npm start
+        - dev_back:
+          - cd backend/
+          - npm start
+        - git_front:
+          - cd frontend/
+          - git st
+        - git_back:
+          - cd backend/
+          - git st
+
+  - monitoring:
+      layout: main-horizontal
+      panes:
+        - dev:
+          - echo 'coucou'
+        - run_several_commands:
+          - cd frontend/
+          - git st
+        - nothing:
+          - cd backend/
+          - git st
+        - dev_scrap:
+          - cd scrap/
